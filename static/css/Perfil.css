@@ -1,0 +1,95 @@
+:root {
+    --primary-blue:#191970 ;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar img {
+    border-radius: 50%;
+    height: 200px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para a imagem */
+    text-align: center; 
+}
+
+.sidebar {
+    width: 280px;
+    background: var(--primary-blue);
+    padding: 2rem; /* Pode ser ajustado conforme necessário */ 
+}
+
+.sidebar p {
+    color: var(--white); /* Cor do texto do nome */
+    font-size: 1.2rem; /* Tamanho da fonte do nome */
+    margin-top: 10px; /* Espaçamento acima do nome */    
+}
+
+.menu {
+    padding: 0;
+}
+
+.top-nav{
+    color: var(--dark-gray); /* Cor do texto do link para cinza escuro */
+    text-decoration: none;
+    padding: 0.75rem 1rem; /* Aumentando o padding para um toque mais confortável */
+    display: block;
+    border: 2px solid var(--white); /* Borda branca */
+    border-radius: 4px; /* Arredondar os cantos da borda */
+    background-color: var(--white); /* Fundo branco */
+    margin-bottom: 0.5rem; /* Espaçamento entre os links */
+}
+
+.nav-link {
+    background-color: #007bff; /* Fundo azul */
+  }
+
+.content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+h2 {
+    font-size: 1.8rem; /* Tamanho do título maior */
+    color: white;
+    margin-left: 44px;
+    margin-top: 2px;
+  
+}
+
+h3 {
+    font-size: 1.5rem; /* Tamanho do subtítulo */
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Sidebar ocupa toda a largura em telas menores */
+        padding: 1rem; /* Reduzindo o padding */
+    }
+
+    .container {
+        flex-direction: column; /* Colocando a sidebar acima do conteúdo */
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Biblioteca Virtual - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/capa.css') }}">
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-container">
+                    <svg class="book-icon" width="50" height="50" viewBox="0 0 24 24" fill="#191970"> </svg>
+                    <img src="https://i.ibb.co/LDn60Dtp/2.png" alt="2" border="0"></a>
+                    <h1>Library Connect</h1>
+                </div>
+                <nav class="main-nav">
+                    <a href="" class="nav-link">Inicio</a>
+                    <a href="{{ url_for('usuarios.autenticar') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('usuarios.create') }}" class="nav-link">Cadastro</a>
+                    <a href="{{ url_for('sobre') }}" class="nav-link">Sobre</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero">
+        <svg class="floating-books book-1" width="40" height="40" viewBox="0 0 24 24" fill="#191970">
+            <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <svg class="floating-books book-2" width="40" height="40" viewBox="0 0 24 24" fill="#191970">
+            <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <svg class="floating-books book-3" width="40" height="40" viewBox="0 0 24 24" fill="#191970">
+            <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <svg class="floating-books book-1" width="40" height="40" viewBox="0 0 24 24" fill="#191970">
+            <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <svg class="floating-books book-2" width="40" height="40" viewBox="0 0 24 24" fill="#191970">
+            <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <svg class="floating-books book-3" width="40" height="40" viewBox="0 0 24 24" fill="#191970">
+            <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <div class="container">
+            <h1>Bem vindo a sua Biblioteca Virtual</h1>
+            <p>Descubra milhares de livros digitais ao seu alcance</p>
+        </div>
+    </main>
+</body>
+</html>

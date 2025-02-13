@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Digital</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/biblioteca.css') }}">
+</head>
+<body>
+    <nav class="top-nav">
+      <a href="{{url_for('inicio')}}" class="nav-link">Inicio</a>
+        <a href="{{ url_for('perfil') }}" class="nav-link">Perfil</a>
+        <a href="{{ url_for('usuarios.logout') }}" class="nav-link">Sair</a>
+        <a href="/templates/capa.html"></a>
+      </nav>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Pesquisar livros, autores ou assuntos...">
+    <button class="search-button">Pesquisar</button>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <h3 class="sidebar-title">Áreas Técnicas</h3>
+      <div class="sidebar-section">
+        <h4>Informática</h4>
+        <a href="logica" class="sidebar-link">1° Ano - Lógica de Programação</a>
+        <a href="hardware" class="sidebar-link">1° Ano - Hardware</a>
+        <a href="web" class="sidebar-link">2° Ano - Desenvolvimento Web</a>
+      </div>
+      <div class="sidebar-section">
+        <h4>Comércio</h4>
+        <a href="marketing" class="sidebar-link">1° Ano - Fundamentos de Marketing</a>
+        <a href="gestao" class="sidebar-link">1° Ano - Gestão Empresarial</a>
+        <a href="economia" class="sidebar-link">2° Ano - Economia</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="section-header">
+        <h2>Informática</h2>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="course-code">1° Ano</div>
+          <div class="course-title">
+            <a href="fundamentos-logica.html">Fundamentos de Lógica de Programação</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">1° Ano</div>
+          <div class="course-title">
+            <a href="informatica.html">Informática</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">1° Ano</div>
+          <div class="course-title">
+            <a href="design-projeto.html">Princípios de Design e Projeto Gráfico</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">2° Ano</div>
+          <div class="course-title">
+            <a href="prog-estruturada.html">Programação Estruturada e Orientada a Objetos</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">2° Ano</div>
+          <div class="course-title">
+            <a href="design-web.html">Design Web e Arquitetura da Informação</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">3° Ano</div>
+          <div class="course-title">
+            <a href="analise-projeto.html">Análise e Projeto Orientados a Objetos</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">3° Ano</div>
+          <div class="course-title">
+            <a href="banco-dados.html">Banco de Dados</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">3° Ano</div>
+          <div class="course-title">
+            <a href="projeto-integrador.html">Desenvolvimento de Projeto Integrador</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">3° Ano</div>
+          <div class="course-title">
+            <a href="servidores.html">Instalação e Configuração de Servidores</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">3° Ano</div>
+          <div class="course-title">
+            <a href="sistemas-internet.html">Programação de Sistemas para Internet</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">4° Ano</div>
+          <div class="course-title">
+            <a href="analise-projeto.html">Análise e Projeto Orientados a Objetos</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">4° Ano</div>
+          <div class="course-title">
+            <a href="interface-usuario.html">Projeto de Interface do Usuário</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">4° Ano</div>
+          <div class="course-title">
+            <a href="servicos.html">Programação Orientada a Serviços</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-code">4° Ano</div>
+          <div class="course-title">
+            <a href="desenvolvimento-web.html">Projeto de Desenvolvimento de Sistemas para Internet</a>
+          </div>
+        </div>
+      </div>
+      <div class="section-header">
+        <h2>Comércio</h2>
+      </div>
+      <!-- Adicione mais cursos aqui -->
+    </div>
+    

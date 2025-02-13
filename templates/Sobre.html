@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Sobre.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <nav>
+                    <ul>
+                        <a href="{{ url_for('capa') }}" class="nav-link">Inicio</a>
+                        <a href="{{ url_for('usuarios.autenticar') }}" class="nav-link">Login</a>
+                        <a href="{{ url_for('usuarios.create') }}" class="nav-link">cadastro</a>
+                        <a href="#" class="nav-link">Sobre</a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <section class="about-section">
+            <div class="about-content">
+                <h2>Sobre Nós</h2>
+                <p>Bem-vindo à nossa plataforma dedicada a democratizar o acesso ao conhecimento. Nossa missão é criar uma plataforma intuitiva e abrangente que conecte leitores a um vasto acervo de conhecimento digital.</p>
+            </div>
+        </section>
+
+        <section class="team-grid">
+            <div class="team-member">
+                <img src="https://i.ibb.co/0FyfyqR/image.png" alt="Foto do integrante do grupo 1, estilo profissional" class="member-photo" width="150" height="150">
+                <h3>vitoria yasmin</h3>
+            </div>
+            <div class="team-member">
+                <img src="https://i.ibb.co/5GG8MqT/image.png" alt="Foto do integrante do grupo 2, estilo profissional" class="member-photo" width="150" height="150">
+                <h3>mariana silva</h3> 
+            </div>
+            <div class="team-member">
+                <img src="https://i.ibb.co/n1gyhFY/image.png" alt="Foto do integrante do grupo 3, estilo profissional" class="member-photo" width="150" height="150">
+                <h3>julia gabrieli</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-message">
+                    <p>Cultivando o conhecimento e inspirando mentes através dos livros.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

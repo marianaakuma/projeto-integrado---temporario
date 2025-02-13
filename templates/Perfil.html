@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Perfil.css') }}">
+    <title>Perfil Pagina</title>
+   </head>
+<body>
+    <a href="{{url_for('biblioteca')}}" class="nav-link">volta</a>
+<div class="container">
+    <div class="sidebar">
+        <div>
+         
+            <img src="https://i.ibb.co/3d8phRS/image.png" alt="image" border="0"></a>
+            <h2>Mariana</h2>
+            <ul class="menu">
+                <nav class="top-nav">
+                    <a href="historico" class="nav-link">Historico</a>
+                    <a href="favoritos" class="nav-link">Favoritos</a>
+                    <a href="suporte_create" class="nav-link">Suporte</a>
+                  </nav>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Configuração -->
+        <div id="config" class="section">
+            <h3>Configuração</h3>
+            <div class="card">
+                <p>Ajuste suas preferências e configure seu perfil.</p>
+            </div>
+        </div>
+
+        <!-- Favoritos -->
+        <div id="favoritos" class="section">
+            <h3>Favoritos</h3>
+            <div class="card">
+                <p>Veja seus itens favoritos salvos.</p>
+            </div>
+        </div>
+
+        <!-- Suporte -->
+        <div id="suporte" class="section">
+            <h3>Suporte</h3>
+            <div class="card">
+                <p>Entre em contato com a nossa equipe de suporte.</p>
+            </div>
+        </div>
+
+        <!-- Histórico -->
+        <div id="historico" class="section">
+            <h3>Histórico</h3>
+            <div class="card">
+                <p>Acompanhe suas atividades recentes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
