@@ -38,6 +38,10 @@ def Volta():
 def biblioteca():
     return render_template('biblioteca.html')
 
+@app.route('/cadastrar_livro')
+def cadastrar_livro():
+    return render_template('cadastrar_livro.html')
+
 @app.route('/Perfil')
 def perfil():
     return render_template('Perfil.html')
