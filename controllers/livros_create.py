@@ -25,21 +25,22 @@ def create():
         return redirect(url_for('biblioteca.html'))
 
 
-@bp_livros_create.route('/autenticar', methods=['GET','POST'])
+@bp_livros_create.route('/autenticar', methods=['POST'])
 def autenticar():
-    if request.method == 'GET':
-            return render_template('livros_create.html')
+    admin = request.form.get("admin")
+    senha = request.form.get("senha")
     
-    if request.method == 'POST':
-        titulo = request.form.get('titulo')
-        ano = request.form.get('ano')
-        curso = request.form.get('curso')
-        Link = request.form.get('link')
-        livros_create = livros_creat.query.filter_by(titulo = titulo).first()
-
-        if (senha is not None and check_password_hash(usuario.senha, senha)):
-            login_user(usuario)
-            return render_template('biblioteca.html')
+    if usuario != 'admin' or senha != 'senha123':
+        if (usuario == 'admin'):
+            flash('O login está correto. ', "warning")
         else:
-            flash('Dados incorretos')
-            return redirect('/')
+            flash('O login está incorreto. ', "danger")
+        
+        if (senha == 'senha123'):
+            flash('A senha está correta. ', "warning")
+        else:
+            flash('A senha está incorreta. ', "danger")
+       
+        return redirect("/livros_create")
+    else:
+        return "Os dados recebidos foram: usuario = {} e senha = {}".format(usuario, senha)
