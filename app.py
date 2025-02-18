@@ -3,7 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from utils import db,lm
 from controllers.usuario import bp_usuarios
+from controllers.livros_create import bp_livros_create
 from models.usuario import Usuario
+from models.livros_create import livros_create
 
 # Inicializando o Flask
 app = Flask(__name__)
@@ -20,6 +22,7 @@ migrate = Migrate(app, db)
 
 # Registrando Blueprints
 app.register_blueprint(bp_usuarios, url_prefix='/user')
+app.register_blueprint(bp_livros_create, url_prefix='/livros_create')
 
 # Rotas principais
 @app.route('/')
@@ -38,9 +41,9 @@ def Volta():
 def biblioteca():
     return render_template('biblioteca.html')
 
-@app.route('/cadastrar_livro')
-def cadastrar_livro():
-    return render_template('cadastrar_livro.html')
+@app.route('/livros_create', methods=['GET', 'POST'])
+def livros_create():
+    return render_template('livros_create.html')
 
 @app.route('/Perfil')
 def perfil():

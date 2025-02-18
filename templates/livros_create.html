@@ -6,25 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>administrado </title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar_livro.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/livros_create.css') }}">
   <link rel="stylesheet"
 </head>
 <body>
   <div class="container mt-5">
-    <form action="/sim" method="post">
+    <form action="/livros.autenticar" method="post">
       <div class="mb-3">
         <label for="titulo" class="form-label">Título:</label>
-        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o título">
+        <input type="text" class="form-control" id="curso" name="curso" placeholder="Digite o curso">
       </div>
       <div class="mb-3">
         <label for="ano" class="form-label">Ano:</label>
         <input type="number" class="form-control" id="ano" name="ano" placeholder="Digite o ano">
       </div>
       <div class="mb-3">
+        <label for="curso" class="form-label">curso:</label>
+        <input type="number" class="form-control" id="curso" name="curso" placeholder="Digite o curso">
+      </div>
+      <div class="mb-3">
         <label for="link" class="form-label">Link:</label>
         <input type="url" class="form-control" id="link" name="link" placeholder="Digite o link">
       </div>
       <button class="btn btn-primary" type="submit">Entrar</button>
+      Não tem uma conta? <a href="{{ url_for('livros_create') }}"></a>
     </form>
   </div>
 </body>
