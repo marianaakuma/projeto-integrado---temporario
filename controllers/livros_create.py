@@ -1,12 +1,11 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash,re
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from utils import db,lm
 from models.livros_create import livros_create
 from flask import Blueprint
 
 bp_livros_create = Blueprint("livros_create", __name__, template_folder='templates')
 
-@bp_ livros_create.route('/create', methods=['GET', 'POST'])
-@livros_create_required
+@bp_livros_create.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method == 'GET':
         return render_template('livros_create.html')  # Ajuste no nome do template
@@ -21,14 +20,7 @@ def create():
         db.session.add(novo_livro)
         db.session.commit()
 
-        return redirect(url_for('livros.biblioteca')) 
-
-@bp_livros_create.route('/biblioteca')
-@login_required
-def biblioteca():
-    livros = Livro.query.all()
-    return render_template('biblioteca.html', livros=livros)
-
+        return redirect(url_for('livros_create')) 
 
 @bp_livros_create.route('/autenticar', methods=['POST'])
 def autenticar():
