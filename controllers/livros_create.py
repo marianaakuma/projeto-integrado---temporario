@@ -1,28 +1,33 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash,re
 from utils import db,lm
 from models.livros_create import livros_create
 from flask import Blueprint
 
 bp_livros_create = Blueprint("livros_create", __name__, template_folder='templates')
 
-@bp_livros_create.route('/create', methods=['GET', 'POST'])
+@bp_ livros_create.route('/create', methods=['GET', 'POST'])
+@livros_create_required
 def create():
     if request.method == 'GET':
-        return render_template('livros_create.html')
+        return render_template('livros_create.html')  # Ajuste no nome do template
 
     if request.method == 'POST':
         titulo = request.form.get('titulo')
         ano = request.form.get('ano')
         curso = request.form.get('curso')
-        Link = request.form.get('Link')
+        link = request.form.get('link')
 
-        # Criar um novo livro
-        novo_livro = Livro(titulo=titulo, ano=ano, curso=curso, Link=Link)
-        db.session.add(livros_create)
+        novo_livro = Livro(titulo, ano, curso, link)
+        db.session.add(novo_livro)
         db.session.commit()
 
-        flash("Livro cadastrado com sucesso!")
-        return redirect(url_for('biblioteca.html'))
+        return redirect(url_for('livros.biblioteca')) 
+
+@bp_livros_create.route('/biblioteca')
+@login_required
+def biblioteca():
+    livros = Livro.query.all()
+    return render_template('biblioteca.html', livros=livros)
 
 
 @bp_livros_create.route('/autenticar', methods=['POST'])
