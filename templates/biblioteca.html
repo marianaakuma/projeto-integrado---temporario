@@ -17,6 +17,9 @@
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Pesquisar livros, autores ou assuntos...">
     <button class="search-button">Pesquisar</button>
+    {% if current_user.admin == True  %}
+      <button> <a href="{{url_for('livros_create.create')}}" class="nav-link">Cria livros</a></button>
+    {% endif %}
   </div>
 
   <div class="main-container">

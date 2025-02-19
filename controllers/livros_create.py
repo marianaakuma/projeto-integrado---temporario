@@ -2,9 +2,12 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from utils import db,lm
 from models.livros_create import livros_create
 from flask import Blueprint
+from flask_login import login_required
 
 bp_livros_create = Blueprint("livros_create", __name__, template_folder='templates')
 
+
+@login_required
 @bp_livros_create.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method == 'GET':
@@ -22,22 +25,8 @@ def create():
 
         return redirect(url_for('livros_create')) 
 
-@bp_livros_create.route('/autenticar', methods=['POST'])
-def autenticar():
-    admin = request.form.get("admin")
-    senha = request.form.get("senha")
-    
-    if usuario != 'admin' or senha != 'senha123':
-        if (usuario == 'admin'):
-            flash('O login está correto. ', "warning")
-        else:
-            flash('O login está incorreto. ', "danger")
-        
-        if (senha == 'senha123'):
-            flash('A senha está correta. ', "warning")
-        else:
-            flash('A senha está incorreta. ', "danger")
-       
-        return redirect("/livros_create")
-    else:
-        return "Os dados recebidos foram: usuario = {} e senha = {}".format(usuario, senha)
+@bp_livros_create.route('/recovery')
+def recovery():
+    if request.method == 'GET':
+        livros= livros_create.query.all()
+        return render_template(url_for("biblioteca",livros = livros))  # Ajuste no nome do template
