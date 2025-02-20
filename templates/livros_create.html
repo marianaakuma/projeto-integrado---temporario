@@ -1,36 +1,35 @@
-
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>administrado </title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/livros_create.css') }}">
-  <link rel="stylesheet"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastra livros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/livros_create.css') }}">
 </head>
 <body>
-  <div class="container mt-5">
-    <form action="url_for('livros_create.create')" method="post">
-      <div class="mb-3">
-        <label for="titulo" class="form-label">Título:</label>
-        <input type="text" class="form-control" id="curso" name="curso" placeholder="Digite o curso">
-      </div>
-      <div class="mb-3">
-        <label for="ano" class="form-label">Ano:</label>
-        <input type="number" class="form-control" id="ano" name="ano" placeholder="Digite o ano">
-      </div>
-      <div class="mb-3">
-        <label for="curso" class="form-label">curso:</label>
-        <input type="number" class="form-control" id="curso" name="curso" placeholder="Digite o curso">
-      </div>
-      <div class="mb-3">
-        <label for="link" class="form-label">Link:</label>
-        <input type="url" class="form-control" id="link" name="link" placeholder="Digite o link">
-      </div>
-      <button class="btn btn-primary" type="submit">Entrar</button>
-      Não tem uma conta? <a href="{{ url_for('livros_create') }}"></a>
-    </form>
-  </div>
+    <div class="container">
+        <form action="url_for('livros_create.create')" method="post">
+            <div class="form-group">
+                <label for="titulo">Título do Livro:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano do Livro:</label>
+                <input type="text" id="ano" name="ano" required>
+            </div>
+            <div class="form-group">
+                <label for="curso">curso:</label>
+                <input type="text" id="curso" name="autor" required>
+            </div>
+            <div class="form-group">
+                <label for="link">Link:</label>
+                <input type="text" id="link" name="link" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Adicionar Livro</button>
+            </div>
+        </form>
+        <a href="{{ url_for('livros_create') }}"></a>
+    </div>
 </body>
 </html>
