@@ -7,7 +7,6 @@ body {
 }
 
 .container {
-    background: #fff;
     padding-right: 140px;
     padding-left: 100px;
     padding-top: 100px;
@@ -33,20 +32,7 @@ input[type="file"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    
 
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #191970;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
- 
 .nav-link{
     position: absolute;
     top: 10px;
@@ -55,4 +41,13 @@ button {
     background-color: #007bff; /* Azul */
     color: white; /* Cor do texto */
     padding: 10px 20px;
+}
+
+
+.create-book-button {
+    background-color:blue; /* Cor de fundo azul */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    width: auto;
 }

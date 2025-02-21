@@ -31,13 +31,13 @@
     text-decoration: none;
     padding: 5px 15px;
     border-radius: 15px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
   }
-
+  
   .nav-link:hover {
-    background-color: var(--secondary-blue);
+    background-color: #007bff;  /* Cor do fundo */
+    color: #ffffff;  /* Cor do texto */
   }
-
 
 
   .search-container {
