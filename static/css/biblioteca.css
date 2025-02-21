@@ -34,12 +34,6 @@
     transition: background-color 0.3s, color 0.3s;
   }
   
-  .nav-link:hover {
-    background-color: #007bff;  /* Cor do fundo */
-    color: #ffffff;  /* Cor do texto */
-  }
-
-
   .search-container {
     background-color: var(--white);
     padding: 20px;
@@ -150,4 +144,3 @@
   .sidebar-link:hover {
     color: var(--secondary-blue);
   }
-  
