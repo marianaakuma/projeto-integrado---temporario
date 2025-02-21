@@ -11,23 +11,36 @@
     <a href="{{url_for('biblioteca')}}" class="nav-link">volta</a>
     </div>
     <div class="container">
-        <form action="url_for('livros_create.create')" method="post">
+        <form action="{{url_for('livros_create.create')}}" method="post">
             <h1>Regitros de livros</h1>
             <div class="form-group">
                 <label for="titulo">Título do Livro:</label>
                 <input type="text" id="titulo" name="titulo" required>
             </div>
             <div class="form-group">
-                <label for="ano">Ano do Livro:</label>
-                <input type="text" id="ano" name="ano" required>
+                <label for="ano">Ano:</label>
+                <select name="ano" id="ano">
+                <option value="1">1°</option>
+                <option value="2">2°</ooption> 
+                <option value="3">3°</option> 
+                <option value="4">4°</option>
+            </select>
             </div>
             <div class="form-group">
                 <label for="curso">curso:</label>
-                <input type="text" id="curso" name="autor" required>
+                <select name="curso" id="curso">
+                <option value="informatica">informatica</option>
+                <option value="comercio">comercio</ooption> 
+                <option value="eletronica">eletronica</option> 
+                </select>
             </div>
             <div class="form-group">
                 <label for="link">Link:</label>
                 <input type="text" id="link" name="link" required>
+            </div>
+            <div class="form-group">
+                <label for="materia">materia:</label>
+                <input type="text" id="materia" name="materia" required>
             </div>
             <div class="form-group">
                 <button type="submit">Adicionar Livro</button>

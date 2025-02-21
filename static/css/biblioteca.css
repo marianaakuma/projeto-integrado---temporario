@@ -101,6 +101,7 @@
   .course-card {
     background-color: var(--white);
     padding: 20px;
+    margin-bottom: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.3s;
@@ -121,10 +122,6 @@
     margin-bottom: 10px;
   }
   
-  .course-professor {
-    color: #666;
-    font-size: 0.9em;
-  }
   
   .sidebar-title {
     color: var(--primary-blue);
@@ -144,3 +141,19 @@
   .sidebar-link:hover {
     color: var(--secondary-blue);
   }
+
+.admbutton{
+background: #1a237e;
+color: white;
+padding: 10px;
+border-radius:16px;
+
+
+}
+
+.admbutton a{
+text-decoration: none;
+color: white;
+
+
+}

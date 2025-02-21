@@ -3,6 +3,7 @@ from utils import db,lm
 from models.usuario import Usuario
 from flask_login import login_user, logout_user
 from flask import Blueprint
+from models.livros_create import livros_create
 from werkzeug.security import generate_password_hash, check_password_hash
 
 bp_usuarios = Blueprint("usuarios", __name__, template_folder='templates')
@@ -66,7 +67,8 @@ def autenticar():
 
         if (senha is not None and check_password_hash(usuario.senha, senha)):
             login_user(usuario)
-            return render_template('biblioteca.html')
+            livros = livros_create.query.all()
+            return render_template('biblioteca.html', livros= livros)
         else:
             flash('Dados incorretos')
             return redirect('/')

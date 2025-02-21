@@ -15,18 +15,22 @@ def create():
 
     if request.method == 'POST':
         titulo = request.form.get('titulo')
+        print(titulo)
         ano = request.form.get('ano')
         curso = request.form.get('curso')
         link = request.form.get('link')
+        materia = request.form.get('materia')
 
-        novo_livro = Livro(titulo, ano, curso, link)
+
+        novo_livro =livros_create(titulo, ano, curso, link, materia)
         db.session.add(novo_livro)
         db.session.commit()
 
-        return redirect(url_for('livros_create')) 
+        return redirect(url_for('livros_create.recovery')) 
 
 @bp_livros_create.route('/recovery')
 def recovery():
     if request.method == 'GET':
         livros= livros_create.query.all()
-        return render_template(url_for("biblioteca",livros = livros))  # Ajuste no nome do template
+        print(livros)
+        return render_template("biblioteca.html",livros = livros)

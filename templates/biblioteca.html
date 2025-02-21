@@ -7,18 +7,20 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/biblioteca.css') }}">
 </head>
 <body>
-    <nav class="top-nav">
-      <a href="{{url_for('inicio')}}" class="nav-link">Inicio</a>
-        <a href="{{ url_for('perfil') }}" class="nav-link">Perfil</a>
-        <a href="{{ url_for('usuarios.logout') }}" class="nav-link">Sair</a>
-        <a href="/templates/capa.html"></a>
-      </nav>
+  <nav class="top-nav">
+    <a href="{{url_for('inicio')}}" class="nav-link">Inicio</a>
+    <a href="{{ url_for('perfil') }}" class="nav-link">Perfil</a>
+    <a href="{{ url_for('usuarios.logout') }}" class="nav-link">Sair</a>
+    <a href="/templates/capa.html"></a>
+  </nav>
 
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Pesquisar livros, autores ou assuntos...">
     <button class="search-button">Pesquisar</button>
-    {% if current_user.admin == True  %}
-      <button> <a href="{{url_for('livros_create.create')}}" class="nav-link">Criar livros</a></button>
+    {% if current_user.admin == True %}
+      <button class="admbutton">
+        <a href="{{url_for('livros_create.create')}}">Criar livros</a>
+      </button>
     {% endif %}
   </div>
 
@@ -27,15 +29,33 @@
       <h3 class="sidebar-title">Áreas Técnicas</h3>
       <div class="sidebar-section">
         <h4>Informática</h4>
-        <a href="logica" class="sidebar-link">1° Ano - Lógica de Programação</a>
-        <a href="hardware" class="sidebar-link">1° Ano - Hardware</a>
-        <a href="web" class="sidebar-link">2° Ano - Desenvolvimento Web</a>
+        {% for livro in livros %} 
+        {% if livro.curso == 'informatica' %}
+          <a href="" class="sidebar-link">{{livro.ano}}° Ano - {{livro.materia}}</a>
+        
+        {% endif %}
+      {% endfor %}
+
       </div>
       <div class="sidebar-section">
         <h4>Comércio</h4>
-        <a href="marketing" class="sidebar-link">1° Ano - Fundamentos de Marketing</a>
-        <a href="gestao" class="sidebar-link">1° Ano - Gestão Empresarial</a>
-        <a href="economia" class="sidebar-link">2° Ano - Economia</a>
+        {% for livro in livros %} 
+        {% if livro.curso == 'comercio' %}
+          <a href="" class="sidebar-link">{{livro.ano}}° Ano - {{livro.materia}}</a>
+        
+        {% endif %}
+      {% endfor %}
+
+      </div>
+      <div class="sidebar-section">
+        <h4>eletronica</h4>
+        {% for livro in livros %} 
+        {% if livro.curso == 'eletronica' %}
+          <a href="" class="sidebar-link">{{livro.ano}}° Ano - {{livro.materia}}</a>
+        
+        {% endif %}
+      {% endfor %}
+
       </div>
     </div>
 
@@ -43,95 +63,52 @@
       <div class="section-header">
         <h2>Informática</h2>
       </div>
-      <div class="course-grid">
-        <div class="course-card">
-          <div class="course-code">1° Ano</div>
-          <div class="course-title">
-            <a href="fundamentos-logica.html">Fundamentos de Lógica de Programação</a>
+      {% for livro in livros %} 
+        {% if livro.curso == 'informatica' %}
+          <div class="course-card">
+            <div class="course-code">{{ livro.ano }}° ano</div>
+            <div class="course-title">
+              <a href="{{ livro.link }}" target="_blank">{{ livro.materia }}</a><br>
+              <a href="{{ livro.link }}" target="_blank">link</a>
+            </div>
           </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">1° Ano</div>
-          <div class="course-title">
-            <a href="informatica.html">Informática</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">1° Ano</div>
-          <div class="course-title">
-            <a href="design-projeto.html">Princípios de Design e Projeto Gráfico</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">2° Ano</div>
-          <div class="course-title">
-            <a href="prog-estruturada.html">Programação Estruturada e Orientada a Objetos</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">2° Ano</div>
-          <div class="course-title">
-            <a href="design-web.html">Design Web e Arquitetura da Informação</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">3° Ano</div>
-          <div class="course-title">
-            <a href="analise-projeto.html">Análise e Projeto Orientados a Objetos</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">3° Ano</div>
-          <div class="course-title">
-            <a href="banco-dados.html">Banco de Dados</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">3° Ano</div>
-          <div class="course-title">
-            <a href="projeto-integrador.html">Desenvolvimento de Projeto Integrador</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">3° Ano</div>
-          <div class="course-title">
-            <a href="servidores.html">Instalação e Configuração de Servidores</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">3° Ano</div>
-          <div class="course-title">
-            <a href="sistemas-internet.html">Programação de Sistemas para Internet</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">4° Ano</div>
-          <div class="course-title">
-            <a href="analise-projeto.html">Análise e Projeto Orientados a Objetos</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">4° Ano</div>
-          <div class="course-title">
-            <a href="interface-usuario.html">Projeto de Interface do Usuário</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">4° Ano</div>
-          <div class="course-title">
-            <a href="servicos.html">Programação Orientada a Serviços</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-code">4° Ano</div>
-          <div class="course-title">
-            <a href="desenvolvimento-web.html">Projeto de Desenvolvimento de Sistemas para Internet</a>
-          </div>
-        </div>
-      </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="content">
       <div class="section-header">
         <h2>Comércio</h2>
       </div>
-      <!-- Adicione mais cursos aqui -->
+      {% for livro in livros %} 
+        {% if livro.curso == 'comercio' %}
+          <div class="course-card">
+            <div class="course-code">{{ livro.ano }}° ano</div>
+            <div class="course-title">
+              <a href="{{ livro.link }}" target="_blank">{{ livro.materia }}</a><br>
+              <a href="{{ livro.link }}" target="_blank">link</a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
-    
+
+    <div class="content">
+      <div class="section-header">
+        <h2>Eletrônica</h2>
+      </div>
+      {% for livro in livros %} 
+        {% if livro.curso == 'eletronica' %}
+          <div class="course-card">
+            <div class="course-code">{{ livro.ano }}° ano</div>
+            <div class="course-title">
+              <a href="{{ livro.link }}" target="_blank">{{ livro.materia }}</a><br>
+              <a href="{{ livro.link }}" target="_blank">link</a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

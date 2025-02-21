@@ -39,7 +39,8 @@ def Volta():
 
 @app.route('/biblioteca')
 def biblioteca():
-    return render_template('biblioteca.html')
+    livros= livros_create.query.all()
+    return render_template('biblioteca.html',livros=livros)
 
 @app.route('/livros_create', methods=['GET', 'POST'])
 def livros_create():
