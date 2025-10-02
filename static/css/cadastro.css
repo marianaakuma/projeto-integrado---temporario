@@ -24,13 +24,10 @@ body {
 }
 
 .cadastro-container {
-    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 40px;
     padding-right: 69px;
     max-width: 400px;
-    margin: 120px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     animation: slideIn 0.8s ease;
 }
 
@@ -41,7 +38,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #191970;
+    color: #C5C9D0;
     font-weight: 500;
 }
 
