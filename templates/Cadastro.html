@@ -18,7 +18,7 @@
     <main class="container">
         <div class="cadastro-container">
             <form class="cadastro-form" action="{{ url_for('usuarios.create') }}" method="POST">
-                <h2 style="text-align: center; color: #191970; margin-bottom: 30px;">Cadastro</h2>
+                <h2 style="text-align: center; color: #191970; margin-bottom: 30px;">Faça seu Cadastro</h2>
 
                 <div class="form-group">
                     <label for="nome">Nome Completo</label>
@@ -42,6 +42,19 @@
                     <input type="password" id="csenha" name="csenha" required>
                     <div class="error-message" id="confirmPasswordError">As senhas não coincidem.</div>
                 </div>
+
+                 <div class="form-group">
+                    <label for="sexo">Sexo</label>
+                    <input type="sexo" id="sexo" name="sexo" required>
+                    <div class="error-message" id="sexo">Sexo.</div>
+                </div>
+
+                   <div class="form-group">
+                    <label for="data de narcimento">Data de Narcimento</label>
+                    <input type="data de narcimento" id="data de narcimento" name="data de narcimento" required>
+                    <div class="error-message" id="sexo">data de narcimento</div>
+                </div>
+
                 Administrador: 
                 <select name="admin">
                   <option value="True">Sim</option>

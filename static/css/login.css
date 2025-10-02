@@ -2,7 +2,9 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(180deg, white 70%, #191970 20%);
+    background: 
+        linear-gradient(180deg, white 100%, white 100%) 0 0 / 50% 100% no-repeat,
+        linear-gradient(180deg, #191970 0%, #191970 100%) 100% 0 / 50% 100% no-repeat;
 }
 
 .header {
