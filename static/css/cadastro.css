@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Poly;
     min-height: 100vh;
     background: 
         linear-gradient(180deg, white 100%, white 100%) 0 0 / 50% 100% no-repeat,
@@ -29,22 +29,23 @@ body {
 
 .cadastro-container {
     border-radius: 20px;
-    padding: 40px;
-    padding-right: 69px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 40px;  /* ✅ afasta o conteúdo do topo */
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     max-width: 400px;
     animation: slideIn 0.8s ease;
 }
 
-.form-group {
-    margin-bottom: 25px;
-}
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    color:#003366;
-    font-weight: 500;
+    margin-bottom: 15px; 
+    color: #003366;
+    font-family: 'Poly', serif;
 }
+
 
 .form-group input {
     width: 100%;
@@ -82,13 +83,11 @@ body {
 .login-link a {
     color: #191970;
     text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e1e1e1;
 }
-
-.login-link a:hover {
-    color: #2a2a8f;
-    text-decoration: underline;
-}
-
 .error-message {
     color: #ff3333;
     font-size: 14px;
