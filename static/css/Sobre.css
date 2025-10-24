@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg,  #191970 0%,#191970 100%);
+    background: #003366;
     color: #ffffff;
     padding: 2rem 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -134,7 +134,7 @@ main {
 }
 
 footer {
-    background: #191970;
+    background:#003366;
     color: #ffffff;
     padding: 2rem 0;
     margin-top: 3rem;
