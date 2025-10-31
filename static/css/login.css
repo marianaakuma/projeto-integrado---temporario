@@ -8,12 +8,13 @@ body {
 }
 
 .img {
-  position: fixed;       /* fixa na tela, não dentro do container */             /* começa do topo */
-  right: 0;              /* gruda na borda direita (lado azul) */
-  width: 50vw;           /* ocupa metade da largura da tela */
-  height: 50vh;         /* ocupa toda a altura da tela */
-  object-fit: contain;     /* faz a imagem preencher sem distorcer */
-  z-index: 0;            /* fica atrás dos outros elementos */
+        position: fixed;       /* fixa na tela, não dentro do container */             /* começa do topo */
+        right:0;    
+        top: 50px;;          /* gruda na borda direita (lado azul) */
+        width: 50vw;           /* ocupa metade da largura da tela */
+        height:100vh;         /* ocupa toda a altura da tela */
+        object-fit: contain;     /* faz a imagem preencher sem distorcer */
+        z-index: 0;            /* fica atrás dos outros elementos */
 }
 
 
